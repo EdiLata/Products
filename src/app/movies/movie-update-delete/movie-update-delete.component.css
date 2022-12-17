@@ -1,0 +1,41 @@
+app-search-bar{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+th {
+    background-color: #0091EA!important;
+    margin: 20px;
+    color: white;
+    width: 100px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.space {
+    margin: 30px;
+}
+
+.to-all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    inline-size: 150px;
+}
+
+.box {
+    word-break: break-all;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+}

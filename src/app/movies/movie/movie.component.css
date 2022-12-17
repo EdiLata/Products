@@ -1,0 +1,19 @@
+.space {
+    margin: 10px
+}
+
+.full {
+    width: 100%;
+}
+
+img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

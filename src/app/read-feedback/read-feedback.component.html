@@ -1,0 +1,14 @@
+<main>
+    <filter (selectedFilter)="filterFeedback($event)" [categories]="reasonList" [default]="'ALL REASONS'"></filter>
+    <ng-container *ngFor="let feedback of filteredFeedback">
+        <div class="container">
+            <chip text="{{feedback.reason}}" [textColor]="'grey'"></chip>
+            <div class="description-container">Description: {{feedback.description}}</div>
+            <button class="btn btn-danger" (click)="this.service.deleteFeedback(feedback)">Delete</button>
+        </div>
+    </ng-container>
+    <div>
+        <br>
+        <br>
+    </div>
+</main>

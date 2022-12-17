@@ -1,0 +1,19 @@
+.chip {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 24px;
+    padding: 4px 12px;
+    white-space: nowrap;
+}
+
+div {
+    color: var(--color);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.84)), var(--color);
+}
+
+.chip-container {
+    display: flex;
+}

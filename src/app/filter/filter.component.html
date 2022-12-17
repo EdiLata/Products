@@ -1,0 +1,8 @@
+<div class="filter-container">
+    <div class="filter-chips" (click)="onClick(-1)" [ngClass]="{'selected': active === -1}">{{default}}
+    </div>
+    <div *ngFor="let category of categories; let i = index" class="filter-chips"
+         (click)="onClick(i, category)" [ngClass]="{'selected': active === i}">
+        {{category | uppercase}}
+    </div>
+</div>

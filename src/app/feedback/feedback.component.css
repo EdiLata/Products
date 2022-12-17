@@ -1,0 +1,36 @@
+.space {
+    margin: 10px
+}
+
+.full {
+    width: 100%;
+}
+
+.description{
+    height: 300px;
+}
+.card{
+    opacity: 0.9;
+}
+
+.all {
+    text-align: center;
+    background-color: #3f51b5;
+    margin-left: 100px;
+    margin-right: 100px;
+    height: 180px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:white;
+}
+
+.container{
+    background-image: url("src/assets/images/feedbackBackgroungimg.jpg");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    padding: 50px;
+}

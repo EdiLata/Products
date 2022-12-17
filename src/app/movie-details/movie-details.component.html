@@ -1,0 +1,25 @@
+<div *ngIf="undifindHandle(movie)">
+    <div class="details-container">
+        <h1>{{movie.title | uppercase}}</h1>
+        <div class="on-line">
+            Price:&nbsp;&nbsp;
+            <chip text="{{movie.price}} lei" [textColor]="'red'"></chip>
+        </div>
+        <div class="body-container">
+            <div class="image-space">
+                <img src="{{movie.imageUrl}}">
+            </div>
+            <div class="space text-space">
+                <h2>Description:</h2>
+                <p>{{movie.description}}</p>
+                <ng-container *ngIf="movie.trailerUrl !== ''">
+                    <h2>Product video:</h2>
+                    <iframe width="100%" height="345" [src]="movie.trailerUrl.replace('watch?v=', 'embed/') | safe"
+                            allowfullscreen>
+                    </iframe>
+                </ng-container>
+            </div>
+        </div>
+        <app-rating [movieTitle]="movie.title"></app-rating>
+    </div>
+</div>

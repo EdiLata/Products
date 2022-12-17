@@ -1,0 +1,25 @@
+<ng-container *ngIf="this.authService.userLoggedIn === true">
+    <ng-container *ngIf="this.authService.admin === true; else elseTemplate">
+
+        <mat-toolbar color="primary" class="mat-elevation-z8">
+            <div style="display: flex; gap: 8px; align-items: center;"><mat-icon>shop</mat-icon>Products</div>
+            <div class="spacer"></div>
+            <a mat-button routerLink="product/list">Home</a>
+            <a mat-button routerLink="feedback">Feedback</a>
+
+            <a mat-button routerLink="admin">Update</a>
+            <a mat-button routerLink="readFeedback">Read
+                feedback</a>
+            <a mat-raised-button color="accent" (click)="logout()" routerLink="home">Log out</a>
+        </mat-toolbar>
+    </ng-container>
+    <ng-template #elseTemplate>
+        <mat-toolbar color="primary" class="mat-elevation-z8">
+            <div style="display: flex; gap: 8px; align-items: center;"><mat-icon>shop</mat-icon>Products</div>
+            <div class="spacer"></div>
+            <a mat-button routerLink="product/list">Home</a>
+            <a mat-button routerLink="feedback">Feedback</a>
+            <a mat-raised-button color="accent" (click)="logout()" routerLink="home">Log out</a>
+        </mat-toolbar>
+    </ng-template>
+</ng-container>

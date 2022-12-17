@@ -1,0 +1,36 @@
+<div class="all"><h1><b>There is our feedback form. Please complete these form and give your honest
+    opinion about our website and about your experience using these application. Also you can write
+    some suggestions about how can we improve our application. </b></h1></div>
+<div class="container">
+
+    <div class="card" style="width: 25rem">
+        <div class="card-body">
+            <form [formGroup]="formTemplate" (submit)="onSubmit(formTemplate.value)">
+
+                <div class="form-group space">
+                    <select formControlName="reason" class="form-control">
+                        <option value="Issue">Issue</option>
+                        <option value="Bug">Bug</option>
+                        <option value="Suggestion">Suggestion</option>
+                        <option value="Other" selected>Other</option>
+                    </select>
+                </div>
+                <div class="form-group space">
+                    <textarea class="form-control description" formControlName="description" placeholder="Description"></textarea>
+                    <div class="text-danger" *ngIf="isSubmitted && formControls.description.errors?.required">This field
+                        is
+                        required.
+                    </div>
+                </div>
+                <div class="row space">
+                    <div class="form-group col-md-6">
+                        <a routerLink="/product/list" class="btn btn-primary full">Go to Products</a>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <button type="submit" class="btn btn-success full">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

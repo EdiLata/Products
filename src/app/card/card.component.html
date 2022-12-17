@@ -1,0 +1,7 @@
+<div class="card">
+    <img [src]="image">
+    <h3>{{title}}</h3>
+    <div *ngIf="category" class="chip">
+        <chip [text]="category" [textColor]="colorCode"></chip>
+    </div>
+</div>

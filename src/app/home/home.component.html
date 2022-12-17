@@ -1,0 +1,28 @@
+<ng-container  *ngIf="this.authService.userLoggedIn === false">
+<div class="all"><h1><b>WELCOME TO OUR PRODUCTS APPLICATION</b></h1></div>
+    <section class="cards-container">
+        <button mat-raised-button color="primary" routerLink="/login">
+            <mat-icon>login</mat-icon>
+            <span>Login</span>
+        </button>
+        <button mat-raised-button color="primary" routerLink="/signup">
+            <mat-icon>person_add</mat-icon>
+            <span>Sign up</span>
+        </button>
+        <button mat-raised-button color="primary" routerLink="/forgot-password">
+            <mat-icon>help_outline</mat-icon>
+            <span>Forgot password</span>
+        </button>
+
+    </section>
+
+    <mat-card *ngIf="(afAuth.user | async)">
+        <mat-icon>check_circle</mat-icon>
+        <span>User is logged in</span>
+    </mat-card>
+    <mat-card *ngIf="!(afAuth.user | async)">
+        <mat-icon>do_not_disturb</mat-icon>
+        <span>User is not logged in</span>
+    </mat-card>
+
+</ng-container>

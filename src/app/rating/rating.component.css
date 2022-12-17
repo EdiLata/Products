@@ -1,0 +1,39 @@
+.space {
+    margin: 10px
+}
+
+.card {
+    width: 100% !important;
+}
+
+.card-body {
+    width: 100%;
+}
+
+.description {
+    height: 200px;
+}
+
+.to-right {
+    float: right;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.description-container {
+    margin: 20px 0;
+}
+
+filter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}

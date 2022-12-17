@@ -1,0 +1,27 @@
+.card {
+    margin: 0 16px 16px 16px;
+    background: #FFFFFF;
+    height: 100%;
+    border-radius: 16px;
+    padding: 16px;
+    cursor: pointer;
+}
+
+h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.chip {
+    padding-top: 8px;
+}
+
+img {
+    width: 100%;
+    height: 180px;
+    border-radius: 8px;
+    margin-bottom: 9px;
+    object-fit: cover;
+}
+

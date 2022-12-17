@@ -1,0 +1,57 @@
+<div class="center-container">
+    <div class="card" style="width: 25rem">
+        <div class="card-body">
+            <form [formGroup]="formTemplate" (submit)="onSubmit(formTemplate.value)">
+                <div class="text-center">
+                    <img [src]="imgSrc" (click)="fileUploader.click()">
+                </div>
+                <div class="form-group space">
+                    <label>Select file to upload</label>
+                    <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="imageUrl"
+                           (change)="showPreview($event)">
+                    <div class="text-danger" *ngIf="isSubmitted && formControls.imageUrl.errors?.required">This field is
+                        required.
+                    </div>
+                </div>
+                <div class="form-group space">
+                    <input class="form-control" formControlName="title" placeholder="Title">
+                    <div class="text-danger" *ngIf="isSubmitted && formControls.title.errors?.required">This field is
+                        required.
+                    </div>
+                </div>
+                <div class="form-group space">
+                    <select formControlName="category" class="form-control">
+                        <option value="Toys">Toys</option>
+                        <option value="Clothes">Clothes</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Food">Food</option>
+                    </select>
+                </div>
+                <div class="form-group space">
+                    <input class="form-control" formControlName="price" placeholder="Price">
+                    <div class="text-danger" *ngIf="isSubmitted && formControls.duration.errors?.required">This field is
+                        required.
+                    </div>
+                </div>
+                <div class="form-group space">
+                    <textarea class="form-control" formControlName="description" placeholder="Description"></textarea>
+                    <div class="text-danger" *ngIf="isSubmitted && formControls.description.errors?.required">This field
+                        is
+                        required.
+                    </div>
+                </div>
+                <div class="form-group space">
+                    <input class="form-control" formControlName="trailerUrl" placeholder="Trailer">
+                </div>
+                <div class="row space">
+                    <div class="form-group col-md-6">
+                        <a routerLink="/product/list" class="btn btn-primary full">Go to Products</a>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <button type="submit" class="btn btn-success full">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

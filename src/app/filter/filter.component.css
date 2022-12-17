@@ -1,0 +1,36 @@
+.filter-container {
+    display: flex;
+    flex-direction: row;
+    padding: 16px 12px;
+    white-space: nowrap;
+    position: relative;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.filter-chips {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.08em;
+    margin: 0 4px;
+    border-radius: 40px;
+    cursor: pointer;
+    padding: 8px 16px;
+    color: black;
+    white-space: nowrap;
+    background-color: white;
+}
+
+.selected {
+    background-color: #0091EA;
+    color: white;
+}
+
+@media screen and (min-width: 1250px) {
+    .filter-container {
+        overflow-x: hidden;
+    }
+}
