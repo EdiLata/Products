@@ -1,4 +1,4 @@
-# Movies
+# Products
 
 Rulare: npm start sau ng serve
 Build: ng build
