@@ -73,6 +73,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { OrderPageComponent } from './order-page/order-page.component';
 
 @NgModule({
     declarations: [
@@ -101,7 +102,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
         SafePipe,
         SearchBarComponent,
         ReadFeedbackComponent,
-        RatingComponent
+        RatingComponent,
+        OrderPageComponent
     ],
     imports: [
         BrowserModule,

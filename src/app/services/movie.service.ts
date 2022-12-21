@@ -13,6 +13,8 @@ export class MovieService implements OnInit {
     movies: Observable<any[]>;
     ratingList: AngularFireList<any>;
     ratings: Observable<any[]>;
+    orderList: AngularFireList<any>;
+    orders: Observable<any[]>;
 
     constructor(private firebase: AngularFireDatabase) {
         this.movieDetailList = firebase.list('productDetails');
@@ -33,6 +35,13 @@ export class MovieService implements OnInit {
                     key: c.payload.key, ...c.payload.val()
                 }))
             ));
+        this.orderList = firebase.list('orderList');
+        this.orders = this.orderList.snapshotChanges().pipe(
+            map(res => res.map(c => ({
+                    key: c.payload.key, ...c.payload.val()
+                }))
+            )
+        );
     }
 
     ngOnInit() {
@@ -130,5 +139,23 @@ export class MovieService implements OnInit {
                 imageUrl: formValue.imageUrl,
                 trailerUrl: formValue.trailerUrl,
             });
+    }
+
+    getOrders() {
+        return this.orders;
+    }
+
+    addOrder(order) {
+        this.orderList.push(order);
+    }
+
+    updateOrder(order) {
+        this.firebase.object('/orderList/' + order.key).set(
+            {
+                orderNumber: order.orderNumber,
+                products: order.products,
+                current: order.current
+            }
+        );
     }
 }
