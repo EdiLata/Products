@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../services/auth.service';
 import {AngularFireAuth} from '@angular/fire/compat/auth';
 import {MovieService} from '../services/movie.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +12,8 @@ import {MovieService} from '../services/movie.service';
 export class NavbarComponent implements OnInit {
   productCount = 0;
   loaded = false;
-  constructor(private afAuth: AngularFireAuth, public authService: AuthService, private service: MovieService ) { }
+  constructor(private afAuth: AngularFireAuth, public authService: AuthService,
+              private service: MovieService, private router: Router ) { }
 
   ngOnInit(): void {
     this.service.getOrders().subscribe(orders => {
@@ -31,4 +33,7 @@ export class NavbarComponent implements OnInit {
     this.afAuth.signOut();
   }
 
+  goToCheckout(): void {
+    this.router.navigate(['checkout']).then();
+  }
 }

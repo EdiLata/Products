@@ -20,7 +20,7 @@
             <a mat-button routerLink="product/list">Home</a>
             <a mat-button routerLink="feedback">Feedback</a>
             <div class="kart-container">
-                <mat-icon>shopping_cart</mat-icon>
+                <mat-icon (click)="goToCheckout()">shopping_cart</mat-icon>
                 <div>{{productCount}}</div>
             </div>
             <a mat-raised-button color="accent" (click)="logout()" routerLink="home">Log out</a>
