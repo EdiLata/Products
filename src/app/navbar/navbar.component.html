@@ -1,4 +1,4 @@
-<ng-container *ngIf="this.authService.userLoggedIn === true">
+<ng-container *ngIf="this.authService.userLoggedIn === true && loaded === true">
     <ng-container *ngIf="this.authService.admin === true; else elseTemplate">
 
         <mat-toolbar color="primary" class="mat-elevation-z8">
@@ -8,8 +8,8 @@
             <a mat-button routerLink="feedback">Feedback</a>
 
             <a mat-button routerLink="admin">Update</a>
-            <a mat-button routerLink="readFeedback">Read
-                feedback</a>
+            <a mat-button routerLink="readFeedback">Read feedback</a>
+            <a mat-button routerLink="orders">Orders</a>
             <a mat-raised-button color="accent" (click)="logout()" routerLink="home">Log out</a>
         </mat-toolbar>
     </ng-container>
@@ -19,6 +19,11 @@
             <div class="spacer"></div>
             <a mat-button routerLink="product/list">Home</a>
             <a mat-button routerLink="feedback">Feedback</a>
+            <a mat-button routerLink="orders">Orders</a>
+            <div class="kart-container">
+                <mat-icon (click)="goToCheckout()">shopping_cart</mat-icon>
+                <div>{{productCount}}</div>
+            </div>
             <a mat-raised-button color="accent" (click)="logout()" routerLink="home">Log out</a>
         </mat-toolbar>
     </ng-template>

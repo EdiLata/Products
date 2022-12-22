@@ -73,6 +73,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { OrderPageComponent } from './order-page/order-page.component';
+import { OrderListPageComponent } from './order-list-page/order-list-page.component';
 import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
@@ -103,6 +105,8 @@ import { FooterComponent } from './footer/footer.component';
         SearchBarComponent,
         ReadFeedbackComponent,
         RatingComponent,
+        OrderPageComponent,
+        OrderListPageComponent
         FooterComponent
     ],
     imports: [
