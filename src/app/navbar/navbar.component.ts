@@ -24,9 +24,12 @@ export class NavbarComponent implements OnInit {
             pc += product.count;
           });
           this.productCount = pc;
-          this.loaded = true;
         }
+        this.loaded = true;
       });
+      if (orders.length === 0) {
+        this.loaded = true;
+      }
     });
   }
   logout(): void {

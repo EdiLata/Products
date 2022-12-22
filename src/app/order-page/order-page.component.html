@@ -1,3 +1,74 @@
 <div *ngIf="loaded">
-    <h3>Checkout</h3>
+    <div class="page-container">
+        <h1 style="width: 100%; text-align: center">Checkout</h1>
+        <div class="order-container">
+            <h2>Order number {{currentOrder.orderNumber}}</h2>
+            <ng-container *ngFor="let product of currentOrder.products">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>{{product.title}}</mat-card-title>
+                        <mat-card-subtitle>Price per unit: {{product.price}}. Total price: {{product.count * product.price}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div class="product-container">
+                            <div class="update-container">
+                                <mat-icon (click)="updateCount(false, product)">remove</mat-icon>
+                                <div class="count-text">{{product.count}}</div>
+                                <mat-icon (click)="updateCount(true, product)">add</mat-icon>
+                            </div>
+                            <button type="submit" class="btn btn-success full" (click)="updateOrder(product)">Update order</button>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </ng-container>
+        </div>
+        <div class="personal-details-container">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>Plata se face prin ramburs!</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <form [formGroup]="formTemplate">
+                        <mat-form-field>
+                            <input placeholder="Contact person" matInput formControlName="person">
+                            <mat-error *ngIf="formControls.person.errors?.required">
+                                This field is required!
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input placeholder="Phone" matInput formControlName="phone">
+                            <mat-error *ngIf="formControls.phone.errors?.required">
+                                This field is required!
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input placeholder="Country" matInput formControlName="country">
+                            <mat-error *ngIf="formControls.country.errors?.required">
+                                This field is required!
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input placeholder="County" matInput formControlName="county">
+                            <mat-error *ngIf="formControls.county.errors?.required">
+                                This field is required!
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input placeholder="City" matInput formControlName="city">
+                            <mat-error *ngIf="formControls.city.errors?.required">
+                                This field is required!
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input placeholder="Street" matInput formControlName="street">
+                            <mat-error *ngIf="formControls.street.errors?.required">
+                                This field is required!
+                            </mat-error>
+                        </mat-form-field>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+            <button (click)="placeOrder()" style="width: 100%" type="submit" class="btn btn-success full">Submit</button>
+        </div>
+    </div>
 </div>

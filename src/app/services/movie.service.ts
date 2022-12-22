@@ -154,7 +154,8 @@ export class MovieService implements OnInit {
             {
                 orderNumber: order.orderNumber,
                 products: order.products,
-                current: order.current
+                current: order.current,
+                personalDetails: order.personalDetails
             }
         );
     }

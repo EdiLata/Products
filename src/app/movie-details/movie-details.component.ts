@@ -60,7 +60,8 @@ export class MovieDetailsComponent implements OnInit {
             const order = {
                 products: [{title: this.movie.title, count: this.productCount, price: this.movie.price}],
                 orderNumber: orderNum,
-                current: true
+                current: true,
+                personalDetails: 'notSet'
             };
             this.service.addOrder(order);
         } else {
