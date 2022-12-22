@@ -75,6 +75,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { OrderPageComponent } from './order-page/order-page.component';
 import { OrderListPageComponent } from './order-list-page/order-list-page.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
     declarations: [
@@ -106,6 +107,7 @@ import { OrderListPageComponent } from './order-list-page/order-list-page.compon
         RatingComponent,
         OrderPageComponent,
         OrderListPageComponent
+        FooterComponent
     ],
     imports: [
         BrowserModule,
