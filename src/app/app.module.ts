@@ -106,7 +106,7 @@ import { FooterComponent } from './footer/footer.component';
         ReadFeedbackComponent,
         RatingComponent,
         OrderPageComponent,
-        OrderListPageComponent
+        OrderListPageComponent,
         FooterComponent
     ],
     imports: [
