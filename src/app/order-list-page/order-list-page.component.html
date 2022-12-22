@@ -1,0 +1,25 @@
+<div *ngIf="loaded">
+    <div class="page-container">
+        <h1 style="width: 100%; text-align: center">Orders</h1>
+        <ng-container *ngFor="let order of orders">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>{{order.orderNumber}}</mat-card-title>
+                    <mat-card-subtitle>{{order.current ? 'Order not completed yet' : 'Order sent'}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <p *ngIf="order.personalDetails !== 'notSet'">{{order.personalDetails}}</p>
+                    <p>Products: </p>
+                    <ng-container *ngFor="let product of order.products">
+                        <p><b>{{product.count}}</b> X {{product.title}}</p>
+                    </ng-container>
+                </mat-card-content>
+            </mat-card>
+        </ng-container>
+    </div>
+</div>
+<div *ngIf="!loaded">
+    <div class="page-container">
+        <h1 style="width: 100%; text-align: center">There are no orders to display!</h1>
+    </div>
+</div>

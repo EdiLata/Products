@@ -17,6 +17,7 @@ import {AdminGuard} from './services/admin.guard';
 import {LogoutGuard} from './services/logout.guard';
 import {ReadFeedbackComponent} from './read-feedback/read-feedback.component';
 import {OrderPageComponent} from './order-page/order-page.component';
+import {OrderListPageComponent} from './order-list-page/order-list-page.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'product/list', pathMatch: 'full' },
@@ -34,6 +35,7 @@ const routes: Routes = [
     {path: 'readFeedback', component: ReadFeedbackComponent, canActivate: [AuthGuard, AdminGuard]},
     {path: 'feedback', component: FeedbackComponent, canActivate: [AuthGuard]},
     {path: 'checkout', component: OrderPageComponent, canActivate: [AuthGuard]},
+    {path: 'orders', component: OrderListPageComponent, canActivate: [AuthGuard]},
     { path: '**', component: HomeComponent }
     // catch-all in case no other path matched
 ];

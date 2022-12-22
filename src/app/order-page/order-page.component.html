@@ -25,7 +25,8 @@
         <div class="personal-details-container">
             <mat-card>
                 <mat-card-header>
-                    <mat-card-title>Plata se face prin ramburs!</mat-card-title>
+                    <mat-card-title>Cash on delivery payment only!</mat-card-title>
+                    <mat-card-subtitle>Total price: {{getTotalPrice()}}</mat-card-subtitle>
                 </mat-card-header>
                 <mat-card-content>
                     <form [formGroup]="formTemplate">
@@ -70,5 +71,10 @@
             </mat-card>
             <button (click)="placeOrder()" style="width: 100%" type="submit" class="btn btn-success full">Submit</button>
         </div>
+    </div>
+</div>
+<div *ngIf="!loaded">
+    <div class="page-container">
+        <h1 style="width: 100%; text-align: center">No orders placed!</h1>
     </div>
 </div>

@@ -62,11 +62,24 @@ export class OrderPageComponent implements OnInit {
   }
 
   placeOrder() {
+    if (!this.formTemplate.valid) {
+      this.snack.open('Please complete all the form fields!', 'Close');
+      return;
+    }
     const formValue = this.formTemplate.value;
     this.currentOrder.personalDetails = 'Contact person: ' + formValue.person + ' Phone: ' + formValue.phone +
         ' Address: ' + formValue.street + ', ' + formValue.city + ', ' + formValue.county + ', ' + formValue.country;
     this.currentOrder.current = false;
     this.service.updateOrder(this.currentOrder);
     this.snack.open('Order placed successfully!', 'Close');
+    window.location.reload();
+  }
+
+  getTotalPrice() {
+    let price = 0;
+    this.currentOrder.products.forEach(p => {
+      price += p.price * p.count;
+    });
+    return price;
   }
 }

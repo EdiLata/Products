@@ -74,6 +74,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { OrderPageComponent } from './order-page/order-page.component';
+import { OrderListPageComponent } from './order-list-page/order-list-page.component';
 
 @NgModule({
     declarations: [
@@ -103,7 +104,8 @@ import { OrderPageComponent } from './order-page/order-page.component';
         SearchBarComponent,
         ReadFeedbackComponent,
         RatingComponent,
-        OrderPageComponent
+        OrderPageComponent,
+        OrderListPageComponent
     ],
     imports: [
         BrowserModule,
